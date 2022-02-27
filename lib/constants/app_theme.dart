@@ -12,8 +12,9 @@ class AppTheme {
       // fontFamily: GoogleFonts.roboto().fontFamily,
       // fontFamily: GoogleFonts.notoSans().fontFamily,
       // fontFamily: GoogleFonts.oswald().fontFamily,
-      primarySwatch: AppColor.primaryMaterialColor,
+      // primarySwatch: AppColor.primaryMaterialColor,
       // primaryColor: AppColor.primaryColor,
+      primarySwatch: NaguaraColors.primaryMaterialColorForNaguara,
       primaryColor: NaguaraColors.naGuaraPrimaryColor,
       primaryColorDark: AppColor.primaryColorDark,
       textSelectionTheme: TextSelectionThemeData(
@@ -21,6 +22,7 @@ class AppTheme {
         cursorColor: AppColor.cursorColor,
       ),
       backgroundColor: NaguaraColors.naGuaraBGColor,
+      unselectedWidgetColor: NaguaraColors.naGuaraPrimaryColor,
       // backgroundColor: Colors.white,
 
       cardColor: Colors.grey[50],

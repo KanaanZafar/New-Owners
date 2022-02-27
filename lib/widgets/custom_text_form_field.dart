@@ -91,6 +91,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           contentPadding: EdgeInsets.all(10),
           filled: true,
           fillColor: widget.fillColor ?? Colors.white,
+          hintStyle: TextStyle(
+            color: NaguaraColors.placeHolderColor,
+            fontSize: 15
+          )
         ),
 
         cursorColor: AppColor.cursorColor,
@@ -112,6 +116,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         keyboardType: widget.keyboardType,
         minLines: widget.minLines,
         maxLines: widget.obscureText ? 1 : widget.maxLines,
+
       ),
     );
   }
