@@ -41,8 +41,8 @@ class _RegisterPageState extends State<RegisterPage> {
       },
       builder: (context, model, child) {
         return BasePage(
-          showLeadingAction: true,
-          showAppBar: true,
+          showLeadingAction: false,
+          showAppBar: false,
           body: SafeArea(
             top: true,
             bottom: false,

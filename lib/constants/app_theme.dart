@@ -8,6 +8,7 @@ class AppTheme {
     return ThemeData(
       // fontFamily: GoogleFonts.iBMPlexSerif().fontFamily,
       fontFamily: GoogleFonts.krub().fontFamily,
+      // fontFamily: GoogleFonts.hiruko,
       // fontFamily: GoogleFonts.roboto().fontFamily,
       // fontFamily: GoogleFonts.notoSans().fontFamily,
       // fontFamily: GoogleFonts.oswald().fontFamily,
@@ -18,7 +19,9 @@ class AppTheme {
         selectionColor: Colors.grey,
         cursorColor: AppColor.cursorColor,
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: NaguaraColors.naGuaraBGColor,
+      // backgroundColor: Colors.white,
+
       cardColor: Colors.grey[50],
       textTheme: TextTheme(
         headline3: TextStyle(
@@ -74,7 +77,7 @@ class AppTheme {
         backgroundColor: Colors.black,
       ),
       colorScheme: ColorScheme.fromSwatch().copyWith(
-         primary: AppColor.primaryColor,
+        primary: AppColor.primaryColor,
         secondary: AppColor.accentColor,
         brightness: Brightness.dark,
       ),

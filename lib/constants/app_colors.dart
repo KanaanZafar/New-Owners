@@ -125,4 +125,10 @@ class AppColor {
         appColorsObject != null ? appColorsObject[colorRef] : "#000000";
     return selectedColor;
   }
+
+
+}
+extension NaguaraColors on AppColor {
+//naguaraColors
+  static Color naGuaraBGColor = Color(0xffF5F5F5);
 }
