@@ -148,17 +148,16 @@ class _RegisterPageState extends State<RegisterPage> {
                             HStack(
                               [
                                 Theme(
-
                                   child: Checkbox(
                                     value: model.agreed,
                                     onChanged: (value) {
                                       model.agreed = value;
                                       model.notifyListeners();
                                     },
-                                    // splashRadius: 30,
+                                    overlayColor:
+                                        MaterialStateProperty.all(Colors.white),
                                     shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5)),
+                                        borderRadius: BorderRadius.circular(5)),
                                   ),
                                   data: ThemeData(
                                       primarySwatch: NaguaraColors
@@ -173,7 +172,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 "Terms & Conditions"
                                     .i18n
                                     .text
-                                    .color(AppColor.primaryColor)
+                                    .color(NaguaraColors.naGuaraPrimaryColor)
                                     .bold
                                     .underline
                                     .make()
@@ -191,14 +190,22 @@ class _RegisterPageState extends State<RegisterPage> {
                             ).centered().py12(),
 
                             //register
-                            "OR".i18n.text.light.makeCentered(),
-                            "Already have an Account"
-                                .i18n
-                                .text
-                                .semiBold
-                                .makeCentered()
-                                .py12()
-                                .onInkTap(model.openLogin),
+                            // "OR".i18n.text.light.makeCentered(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                "Already have an Account"
+                                    .i18n
+                                    .text
+                                    .semiBold
+                                    .makeCentered()
+                                    .py12(),
+                                    // .onInkTap(model.openLogin),
+                              Text(" "),
+                                // title: "Login".i18n,
+                                "Login".i18n.text.color(NaguaraColors.naGuaraPrimaryColor).semiBold.makeCentered().py12().onInkTap(model.openLogin)
+                              ],
+                            ),
                           ],
                           crossAlignment: CrossAxisAlignment.end,
                         ),
