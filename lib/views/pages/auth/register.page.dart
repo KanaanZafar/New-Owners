@@ -24,6 +24,7 @@ class RegisterPage extends StatefulWidget {
   final String email;
   final String name;
   final String phone;
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -77,6 +78,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               keyboardType: TextInputType.emailAddress,
                               textEditingController: model.emailTEC,
                               validator: FormValidator.validateEmail,
+
                             ).py12(),
                             //
                             HStack(
@@ -151,6 +153,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               title: "Create Account".i18n,
                               loading: model.isBusy,
                               onPressed: model.processRegister,
+                              shapeRadius: 10,
                             ).centered().py12(),
 
                             //register

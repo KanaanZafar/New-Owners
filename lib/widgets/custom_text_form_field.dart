@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:fuodz/constants/app_colors.dart';
 import 'package:fuodz/constants/input.styles.dart';
+import 'package:fuodz/widgets/container_with_shadow.dart';
 
 class CustomTextFormField extends StatefulWidget {
   CustomTextFormField({
@@ -65,50 +66,52 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: widget.labelText,
-        hintText: widget.hintText,
-        errorText: widget.errorText,
-        enabledBorder: widget.underline
-            ? InputStyles.inputUnderlineEnabledBorder()
-            : InputStyles.inputEnabledBorder(),
-        errorBorder: widget.underline
-            ? InputStyles.inputUnderlineEnabledBorder()
-            : InputStyles.inputEnabledBorder(),
-        focusedErrorBorder: widget.underline
-            ? InputStyles.inputUnderlineFocusBorder()
-            : InputStyles.inputFocusBorder(),
-        focusedBorder: widget.underline
-            ? InputStyles.inputUnderlineFocusBorder()
-            : InputStyles.inputFocusBorder(),
-        prefixIcon: widget.prefixIcon,
-        suffixIcon: widget.suffixIcon ?? _getSuffixWidget(),
-        labelStyle: Theme.of(context).textTheme.bodyText1,
-        contentPadding: EdgeInsets.all(10),
-        filled: widget.fillColor != null,
-        fillColor: widget.fillColor,
+    return ContainerWithShadow(
+      child: TextFormField(
+        decoration: InputDecoration(
+          labelText: widget.labelText,
+          hintText: widget.hintText,
+          errorText: widget.errorText,
+          enabledBorder: widget.underline
+              ? InputStyles.inputUnderlineEnabledBorder()
+              : InputStyles.inputEnabledBorder(),
+          errorBorder: widget.underline
+              ? InputStyles.inputUnderlineEnabledBorder()
+              : InputStyles.inputEnabledBorder(),
+          focusedErrorBorder: widget.underline
+              ? InputStyles.inputUnderlineFocusBorder()
+              : InputStyles.inputFocusBorder(),
+          focusedBorder: widget.underline
+              ? InputStyles.inputUnderlineFocusBorder()
+              : InputStyles.inputFocusBorder(),
+          prefixIcon: widget.prefixIcon,
+          suffixIcon: widget.suffixIcon ?? _getSuffixWidget(),
+          labelStyle: Theme.of(context).textTheme.bodyText1,
+          contentPadding: EdgeInsets.all(10),
+          filled: true,
+          fillColor: widget.fillColor ?? Colors.white,
+        ),
+
+        cursorColor: AppColor.cursorColor,
+        obscureText: (widget.obscureText) ? !makePasswordVisible : false,
+        onTap: widget.onTap,
+        readOnly: widget.isReadOnly,
+        controller: widget.textEditingController,
+        validator: widget.validator,
+        focusNode: widget.focusNode,
+        onFieldSubmitted: (data) {
+          if (widget.onFieldSubmitted != null) {
+            widget.onFieldSubmitted(data);
+          } else {
+            FocusScope.of(context).requestFocus(widget.nextFocusNode);
+          }
+        },
+        onChanged: widget.onChanged,
+        textInputAction: widget.textInputAction,
+        keyboardType: widget.keyboardType,
+        minLines: widget.minLines,
+        maxLines: widget.obscureText ? 1 : widget.maxLines,
       ),
-      
-      cursorColor: AppColor.cursorColor,
-      obscureText: (widget.obscureText) ? !makePasswordVisible : false,
-      onTap: widget.onTap,
-      readOnly: widget.isReadOnly,
-      controller: widget.textEditingController,
-      validator: widget.validator,
-      focusNode: widget.focusNode,
-      onFieldSubmitted: (data) {
-        if (widget.onFieldSubmitted != null) {
-          widget.onFieldSubmitted(data);
-        } else {
-          FocusScope.of(context).requestFocus(widget.nextFocusNode);
-        }
-      },
-      onChanged: widget.onChanged,
-      textInputAction: widget.textInputAction,
-      keyboardType: widget.keyboardType,
-      minLines: widget.minLines,
-      maxLines: widget.obscureText ? 1 : widget.maxLines,
     );
   }
 

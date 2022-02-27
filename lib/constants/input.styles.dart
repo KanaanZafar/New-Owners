@@ -7,9 +7,9 @@ class InputStyles {
   static InputBorder inputEnabledBorder() {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: AppColor.primaryColor,
+        color: NaguaraColors.fieldBorderColor//AppColor.primaryColor,
       ),
-      borderRadius: BorderRadius.circular(Vx.dp4),
+      borderRadius: BorderRadius.circular(Vx.dp10),
     );
   }
 
@@ -17,9 +17,9 @@ class InputStyles {
   static InputBorder inputFocusBorder() {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: AppColor.primaryColorDark,
+        color: NaguaraColors.fieldBorderColor//AppColor.primaryColorDark,
       ),
-      borderRadius: BorderRadius.circular(Vx.dp4),
+      borderRadius: BorderRadius.circular(Vx.dp10),
     );
   }
 

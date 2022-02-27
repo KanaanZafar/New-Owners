@@ -13,7 +13,8 @@ class AppTheme {
       // fontFamily: GoogleFonts.notoSans().fontFamily,
       // fontFamily: GoogleFonts.oswald().fontFamily,
       primarySwatch: AppColor.primaryMaterialColor,
-      primaryColor: AppColor.primaryColor,
+      // primaryColor: AppColor.primaryColor,
+      primaryColor: NaguaraColors.naGuaraPrimaryColor,
       primaryColorDark: AppColor.primaryColorDark,
       textSelectionTheme: TextSelectionThemeData(
         selectionColor: Colors.grey,

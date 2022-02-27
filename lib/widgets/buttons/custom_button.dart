@@ -48,7 +48,7 @@ class CustomButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: this.elevation,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          primary: this.color ?? AppColor.primaryColor,
+          primary: this.color ?? NaguaraColors.naGuaraPrimaryColor,
           onSurface: this.loading ? AppColor.primaryColor : null,
           shape: this.shape ??
               RoundedRectangleBorder(
