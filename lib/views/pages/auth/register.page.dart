@@ -71,16 +71,26 @@ class _RegisterPageState extends State<RegisterPage> {
                               labelText: "Name".i18n,
                               textEditingController: model.nameTEC,
                               validator: FormValidator.validateName,
-                            ).py12(),
-                            //
+                              suffixIcon: Image.asset(
+                                "assets/images/name-suffix.png",
+                                // fit: BoxFit.fill,
+                              ),
+                            ), //.py12(),
+                            SizedBox(
+                              height: 20,
+                            ),
                             CustomTextFormField(
                               labelText: "Email",
                               keyboardType: TextInputType.emailAddress,
                               textEditingController: model.emailTEC,
                               validator: FormValidator.validateEmail,
+                              suffixIcon:
+                                  Image.asset("assets/images/email-suffix.png"),
+                            ), //.py12(),
+                            SizedBox(
+                              height: 20,
+                            ),
 
-                            ).py12(),
-                            //
                             HStack(
                               [
                                 CustomTextFormField(
@@ -104,23 +114,31 @@ class _RegisterPageState extends State<RegisterPage> {
                                   keyboardType: TextInputType.phone,
                                   textEditingController: model.phoneTEC,
                                   validator: FormValidator.validatePhone,
+                                  suffixIcon: Image.asset(
+                                      "assets/images/phone-suffix.png"),
                                 ).expand(),
                               ],
-                            ).py12(),
-                            //
+                            ), //.py12(),
+                            SizedBox(
+                              height: 20,
+                            ),
                             CustomTextFormField(
                               labelText: "Password".i18n,
                               obscureText: true,
                               textEditingController: model.passwordTEC,
                               validator: FormValidator.validatePassword,
-                            ).py12(),
-                            //
+                            ), //.py12(),
+                            SizedBox(
+                              height: 20,
+                            ),
                             AppStrings.enableReferSystem
                                 ? CustomTextFormField(
                                     labelText: "Referral Code(optional)".i18n,
                                     textEditingController:
                                         model.referralCodeTEC,
-                                  ).py12()
+                                    suffixIcon: Image.asset(
+                                        "assets/images/referal-suffix.png"),
+                                  ) //.py12()
                                 : UiSpacer.emptySpace(),
 
                             //terms

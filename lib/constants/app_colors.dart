@@ -147,6 +147,6 @@ extension NaguaraColors on AppColor {
   static Color naGuaraPrimaryColor = Color(0xffFF9C00);
   static Color fieldBorderColor = Color(0xffCBCBCB);
 
-  // static Color shadowColor = Color(0x0000001A);
-  static Color shadowColor = Color.fromRGBO(0, 0, 0, 0.1);
+  static Color shadowColor = Color(0x0000001A);
+
 }
