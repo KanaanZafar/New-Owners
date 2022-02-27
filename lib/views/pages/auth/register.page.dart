@@ -148,14 +148,17 @@ class _RegisterPageState extends State<RegisterPage> {
                             HStack(
                               [
                                 Theme(
+
                                   child: Checkbox(
                                     value: model.agreed,
                                     onChanged: (value) {
                                       model.agreed = value;
                                       model.notifyListeners();
                                     },
+                                    // splashRadius: 30,
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
+                                        borderRadius:
+                                            BorderRadius.circular(5)),
                                   ),
                                   data: ThemeData(
                                       primarySwatch: NaguaraColors
