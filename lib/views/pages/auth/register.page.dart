@@ -154,6 +154,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                       model.agreed = value;
                                       model.notifyListeners();
                                     },
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
                                   ),
                                   data: ThemeData(
                                       primarySwatch: NaguaraColors
